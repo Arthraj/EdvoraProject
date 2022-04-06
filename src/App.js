@@ -7,7 +7,6 @@ import "./App.css";
 function App() {
   const [dataSet, setDataSet] = useState([]);
   const [tempDataSet, settempDataSet] = useState([]);
-  const [nearDataSet, setNearDataSet] = useState([]);
   const [count, setCount] = useState(0);
 
   const [UserData, setUserData] = useState([]);
@@ -25,7 +24,7 @@ function App() {
         // console.log(rideInfo);
         settempDataSet(rideInfo);
         setDataSet(rideInfo);
-      });
+      }).then(rideFilter("nearest"));
   }, 0);
 
   // "https://assessment.api.vweb.app/user
@@ -38,6 +37,7 @@ function App() {
         // console.log(userInfo);
 
         setUserData(userInfo);
+        
       });
   }, 0);
 
@@ -164,13 +164,23 @@ function App() {
             <div className="outer-box">
               <div className="top-box">
                 <div className="varities container">
-                  <a href="#">
+                <a href="#">
                     <p
                       className="selected bold "
+                      onClick={()=>{
+                          rideFilter("nearest");
+                        }}
+                    >
+                      All
+                    </p>
+                  </a>
+                  <a href="#">
+                    <p
+                      className=" text-dark "
                       id="first"
-                      onClick={() => {
-                        rideFilter("nearest");
-                      }}
+                      onClick={()=>{
+                          rideFilter("nearest");
+                        }}
                     >
                       Nearest rides
                     </p>
