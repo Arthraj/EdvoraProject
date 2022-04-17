@@ -1,3 +1,7 @@
+
+Link: [https://edvoraproject.pages.dev](https://edvoraproject.pages.dev)
+Deployed on Cloudflare
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
